@@ -1,0 +1,198 @@
+
+<!-- 
+<script type="text/javascript">
+
+
+	var a1 =20;
+	console.log(a1);
+	for(let i=0; i<10;i++){
+		var b1=6;
+		var a1 = b1*10;
+	}
+	console.log(a1);
+
+</script>
+
+ -->
+
+<!-- 
+g) What is the difference between block scope and function scope
+
+Javascript uses something called function scope. Basically, the difference between function scope and block scope is that in a language that uses function scope, any variables declared within a function are visible anywhere within that same function.
+
+
+f)While writing code, what is the preferred way to declare a variable and why. What is the implication for eachi.
+with varii.
+with letiii.
+without anything -->
+
+<!-- 
+a)Write down the example shown for hoisting. Also, write down the concept explained in it
+
+
+JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.
+
+Hoisting allows functions to be safely used in code before they are declared.
+
+Variable and class declarations are also hoisted, so they too can be referenced before they are declared. Note that doing so can lead to unexpected errors, and is not generally recommended.
+
+
+
+
+b)What is the advantage of function hoisting. Explain
+
+Hoisting is JS's default behavior of defining all the declarations at the top of the scope before code execution. One of the benefits of hoisting is that it enables us to call functions before they appear in the code. JavaScript only hoists declarations, not initializations
+
+
+
+
+
+task 3d) Explain the concept of default parameters. What is the purpose.
+ -->
+
+
+<!-- <script type="text/javascript">
+	hello();
+	function hello1(){
+		console.log("Hello1");
+	}
+	function hello(){
+		console.log('Hello');
+	}
+</script> -->
+
+<!-- 
+
+task 3f) Why do we need spread operator for objects. What is the purpose of making a copy of an object
+
+
+The spread operator is used to create a copy of existing objects with new or updated values or make a copy of an object with more properties. Instead of pass each element in the array as an argument in the function call, we can pass the array element as an individual argument using the spread operator.
+
+
+
+task 3g) Write down the example shown for object destructuring. Write down the concepts explained in i.
+
+
+The object destructuring is a useful JavaScript feature to extract properties from objects and bind them to variables.
+
+What's better, object destructuring can extract multiple properties in one statement, can access properties from nested objects, and can set a default value if the property doesn't exist.
+
+
+task 3i) Is the name of the variables important in object destructuring. Explain with an example.
+
+he object destructuring is a useful JavaScript feature to extract properties from objects and bind them to variables.
+What's better, object destructuring can extract multiple properties in one statement, can access properties from nested objects, and can set a default value if the property doesn't exist.
+
+
+TASK 3j) What happens when a property with the name specified in object destructuring is not found in the object. Explain with an example.
+
+Destructuring Assignment is a JavaScript expression that allows to unpack values from arrays, or properties from objects, into distinct variables data can be extracted from arrays, objects, nested objects and assigning to variables.
+
+
+TASK 3K) What is the concept of default values in object destructuring. Explain with an example. 
+Destructuring is a convenient way of extracting multiple values from data stored in (possibly nested) objects and Arrays. It can be used in locations that receive data (such as the left-hand side of an assignment). How to extract the values is specified via patterns (read on for examples).
+
+10.1.1 Object destructuring 
+Destructuring objects:
+
+const obj = { first: 'Jane', last: 'Doe' };
+const {first: f, last: l} = obj;
+    // f = 'Jane'; l = 'Doe'
+
+// {prop} is short for {prop: prop}
+const {first, last} = obj;
+    // first = 'Jane'; last = 'Doe'
+Destructuring helps with processing return values:
+
+const obj = { foo: 123 };
+
+const {writable, configurable} =
+    Object.getOwnPropertyDescriptor(obj, 'foo');
+
+console.log(writable, configurable); // true true
+10.1.2 Array destructuring 
+Array destructuring (works for all iterable values):
+
+const iterable = ['a', 'b'];
+const [x, y] = iterable;
+    // x = 'a'; y = 'b'
+Destructuring helps with processing return values:
+
+const [all, year, month, day] =
+    /^(\d\d\d\d)-(\d\d)-(\d\d)$/
+    .exec('2999-12-31');
+10.1.3 Where can destructuring be used? 
+Destructuring can be used in the following locations (I’m showing Array patterns to demonstrate; object patterns work just as well):
+ -->
+
+<!-- 
+<script type="text/javascript">
+	let user1 ={
+		name: 'jack',
+		age:22,
+	}
+	let user2 ={...user1};
+	console.log(user1);
+	console.log(user2);
+</script> -->
+
+
+<!-- <script type="text/javascript">
+	function multiply(n1,n2=1,n3=1,n4=1,n5=1){
+		console.log(n1,n2,n3,n4,n5);
+		return n1*n2*n3*n4*n5;
+	}
+	console.log(multiply(1,2,3,4,5));
+</script> -->
+
+<!-- 
+<script type="text/javascript">
+	let check = (target,s1,s2,s3) =>{
+		let total = s1+s2+s3;
+		return total>target;
+	}
+	console.log(check(22,2,5,6));
+</script> -->
+
+
+<!-- <script type="text/javascript">
+	let obj = {product : 'PR01', price:10, quantity: 25};
+
+	let {price,quantity} = obj;
+	let discPercent = quantity>8 ? 0.15 :0.10;
+	let discount = discPercent *Price*quantity;
+	let finalAmount = price*quantity - discount;
+	let obj1 = {...obj, discount:discount, finalAmount:finalAmount};
+	console.log(obj);
+	console.log(obj1);
+</script> -->
+
+<!-- 
+<script type="text/javascript">
+	const arr = [
+	{name:'Mary', marks1:25, marks2:30, marks3:40},
+	{name:'bob', marks1:22, marks2:33},
+	{name:'Dave', marks1:19},
+	{name:'Tim', marks1:11},
+	{name:'jack'},
+	];
+
+	const arr1 = arr.map(st => {
+		let {marks1,marks2,marks3} = st;
+		let totaMarks = marks1+marks2+marks3;
+		let obj = {...st, totaMarks: totaMarks};
+		return obj;
+	});
+	console.log(arr1);
+</script> -->
+
+
+<!-- <script type="text/javascript">
+	let student = {
+		name : 'Jack',
+		age: 22,
+		course: 'Javascript'
+	};
+	let {name,course,age,grade = 'B'} = student;
+	console.log(name,age,course,grade);
+</script> -->

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button onclick="getData()">Show Form</button>
+	<div id="disArea"></div>
+	<script type="text/javascript">
+		const courses = ['Full Stack','python', 'Android','java'];
+		let data= {};
+		function getData() {
+			let str= 'Name:<input type="text" id="name"><br/>';
+			str+= 'Age:<input type="text" id="age"><br/>';
+			str+= makeCoursesDD(courses,'choose course')+'</br>';
+			str+= '<button onclick=\"submit()\">Submit</button>';
+			let div = document.getElementById('disArea');
+			div.innerHTML = str;
+		}
+
+		function makeCoursesDD(arr,firstItem){
+			const arr1 = arr.map(function(opt){
+				return '<option>'+opt+'</option>';
+			});
+			let first = '<option disabled selected>'+firstItem+'</option>';
+			let s1= '<select id="course">'+first+arr1.join('')+'</select>';
+			return s1;
+		}
+		function submit(){
+			data.name = document.getElementById('name').value;
+			data.age = document.getElementById('age').value;
+			data.course = document.getElementById('course').value;
+			let str = '<h3>Name:'+data.name+'</h3>';
+			str += '<h3>Age:'+data.age+'</h3>';
+			str += '<h3>Course:'+data.course+'</h3>';
+			let div = document.getElementById('disArea');
+			div.innerHTML= str;
+		}
+		function showStudents() {
+	const arr1 = students.map(function(ele){
+	let str ='<tr>';
+	str+='<td class=\''+getClassMarks(ele.name)+'\'>'+ele.name+'</td>';
+	str+='<td class=\''+getClassMarks(ele.maths)+'\'>'+ele.maths+'</td>';
+	str+='<td class=\''+getClassMarks(ele.science)+'\'>'+ele.science+'</td>';
+	str+='<td class=\''+getClassMarks(ele.english)+'\'>'+ele.english+'</td>';
+	str+='</tr>';
+	return str;
+	});
+
+	</script>
+
+</body>
+</html>

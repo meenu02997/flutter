@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+	<title></title>
+</head>
+<body>
+	<h2>List of Names</h2>
+	<div id="listNames"></div>
+	<button onclick="showNames()">
+	Show Names</button>
+	<button onclick="hideNames()">
+	Show Names</button>
+	<button onclick="sortAsc()">
+	Asc Names</button>
+	<button onclick="changeNameStyle()">
+	changeNameStyle</button>
+	<h3 class="showBlu">Seller : Jack Smith</h3>
+	<h3 class="showBlu">Seller@gmail.com</h3>
+	<h3 class="showBlu">mobile:8218240755</h3>
+	<script type="text/javascript">
+		const names = ["Adam Benson", "Clare Donaldson", "Ben Adams", "Donald Clarkson"];
+
+
+		function showNames() {
+			const namesMap = names.map(function(name){
+				return '</li>'+name+'</li>';
+			});
+			let str = '<ul>'+namesMap.join(' ')+'</ul>';
+			let element = document.getElementById('listNames');
+			element.innerHTML = str;
+		}
+		function sortAsc(){
+			names.sort(sortNamesAsc);
+			showNames();
+		}
+		function sortNamesAsc(name1,name2){
+			return name1.localeCompare(name2);
+		}
+		const ids = ['name','email','mobile'];
+	function changeNameStyle(){
+	let element =document.getElementById(ids[i]);
+	element.className = 'showBlu';
+}
+	</script>
+
+</body>
+</html>

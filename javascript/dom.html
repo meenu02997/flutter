@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2>Sales Data</h2>
+	<h3 id="name1">Seller: Jack Smith</h3>
+	<h3 id="sale1">Total Sale: <span id="qty">12</span></h3>
+	<div id="data"></div>
+	<button onclick='addSale()'>Add 1 for sale</button>
+	<button onclick="show(0)">Add 2 for sale</button>
+	<script type="text/javascript">
+
+		let persons=[  
+    {"name":"Shyam", "email":"shyamjaiswal@gmail.com"},  
+    {"name":"Bob", "email":"bob32@gmail.com"},  
+    {"name":"Jai", "email":"jai87@gmail.com"}  
+];  
+		function addSale(){
+			let mmEle= document.getElementById('qty');
+			let quantity = mmEle.innerHTML;
+		console.log(quantity);
+		}
+		function show(index){
+			let person = persons[index];
+			let element = document.getElementById('data');
+			let str = '<h3>'+person.name+'<h3>';
+			str+='<h3>'+person.name+'<h3>';
+			str+='<h3>'+person.email+'<h3>';
+			str+= '</tr>';
+			console.log(str);
+			element.innerHTML=str;
+		}
+	</script>
+
+
+
+</body>
+</html>

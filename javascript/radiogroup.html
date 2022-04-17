@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+	<form>
+  <p>Please select your preferred contact method:</p>
+  wht do you know best<br/>
+	<input type="checkbox" name="tech" value="Javascript" id="r1">JavaScript<br>
+  <div>
+  	what is your level
+    <input type="radio" id="contactChoice1"
+           name="contact" value="email">
+    <label for="contactChoice1">Beginner</label>
+    <input type="radio" id="contactChoice2"
+           name="contact" value="phone">
+    <label for="contactChoice2">Intermediate</label>
+    <input type="radio" id="contactChoice3"
+           name="contact" value="mail">
+    <label for="contactChoice3">good</label>
+  </div>
+  share the link of project<br/>
+	<input type="checkbox" name="tech" value="Javascript" id="r1">JavaScript<br>
+	<input type="checkbox" name="tech" value="Javascript" id="r1">python<br>
+	<input type="checkbox" name="tech" value="Javascript" id="r1">Script<br>
+	<input type="checkbox" name="tech" value="Javascript" id="r1">python3<br>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
+<form>
+  <p>Note that multiple technologies can be checked at the same time:</p>
+  Share your technical capebilties<br/>
+	<input type="checkbox" name="tech" value="Javascript" id="r1">JavaScript<br>
+
+  <div>
+    what is your level
+    <input type="radio" id="contactChoice1"
+           name="contact" value="email">
+    <label for="contactChoice1">Beginner</label>
+    <input type="radio" id="contactChoice2"
+           name="contact" value="phone">
+    <label for="contactChoice2">Intermediate</label>
+    <input type="radio" id="contactChoice3"
+           name="contact" value="mail">
+    <label for="contactChoice3">good</label>
+  </div>
+
+  <input type="checkbox" name="tech" value="Javascript" id="r1">Java<br>
+  <div>
+    what is your level
+    <input type="radio" id="contactChoice1"
+           name="contact" value="email">
+    <label for="contactChoice1">Beginner</label>
+    <input type="radio" id="contactChoice2"
+           name="contact" value="phone">
+    <label for="contactChoice2">Intermediate</label>
+    <input type="radio" id="contactChoice3"
+           name="contact" value="mail">
+    <label for="contactChoice3">good</label>
+  </div>
+
+ <input type="checkbox" name="tech" value="Javascript" id="r1">Python<br>
+  <div>
+    what is your level
+    <input type="radio" id="contactChoice1"
+           name="contact" value="email">
+    <label for="contactChoice1">Beginner</label>
+    <input type="radio" id="contactChoice2"
+           name="contact" value="phone">
+    <label for="contactChoice2">Intermediate</label>
+    <input type="radio" id="contactChoice3"
+           name="contact" value="mail">
+    <label for="contactChoice3">good</label>
+  </div>
+
+<input type="checkbox" name="tech" value="Javascript" id="r1">c#<br>
+  <div>
+    what is your level
+    <input type="radio" id="contactChoice1"
+           name="contact" value="email">
+    <label for="contactChoice1">Beginner</label>
+    <input type="radio" id="contactChoice2"
+           name="contact" value="phone">
+    <label for="contactChoice2">Intermediate</label>
+    <input type="radio" id="contactChoice3"
+           name="contact" value="mail">
+    <label for="contactChoice3">good</label>
+  </div>
+
+
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
+
+<form>
+  <p>Please select your preferred contact method:</p>
+  <div>
+    <input type="radio" id="contactChoice1"
+           name="contact" value="email">
+    <label for="contactChoice1">Email</label>
+    <input type="radio" id="contactChoice2"
+           name="contact" value="phone">
+    <label for="contactChoice2">Phone</label>
+    <input type="radio" id="contactChoice3"
+           name="contact" value="mail">
+    <label for="contactChoice3">Mail</label>
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
+
+<pre id="log">
+</pre>
+
+
+
+	<script type="text/javascript">
+		const radioOptions = [
+		var form = document.querySelector("form");
+var log = document.querySelector("#log");
+
+form.addEventListener("submit", function(event) {
+  var data = new FormData(form);
+  var output = "";
+  for (const entry of data) {
+    output = output + entry[0] + "=" + entry[1] + "\r";
+  };
+  log.innerText = output;
+  event.preventDefault();
+}, false);
+
+
+	</script>
+
+</body>
+</html>

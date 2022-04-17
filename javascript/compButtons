@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+	<title></title>
+</head>
+<body>
+	<h2>Students</h2>
+	<div id='Students'></div>
+	<button onclick="showStudents()">show Students</button>
+	<button onclick="showStudents()">highlight Marks</button>
+	<button onclick="showStudents()">highlight students</button>
+	<button onclick="showStudents()">clear</button>
+	<script type="text/javascript">
+		let highlightMarks = false;
+	 let students=[
+	 {"name":"Jack","maths":55,english:60,"science":62},
+{"name":"Anita","maths":62,english:65,"science":56},
+{"name":"Thomas","maths":68,english:72,"science":75},
+{"name":"Steve","maths":51,english:56,"science":68},
+{"name":"Julia","maths":47,english:77,"science":72},
+{"name":"Mary","maths":72,english:55,"science":81}];
+function showStudents() {
+	const arr1 = students.map(function(ele){
+	let str ='<tr>';
+	str+='<td class=\''+getClassMarks(ele.name)+'\'>'+ele.name+'</td>';
+	str+='<td class=\''+getClassMarks(ele.maths)+'\'>'+ele.maths+'</td>';
+	str+='<td class=\''+getClassMarks(ele.science)+'\'>'+ele.science+'</td>';
+	str+='<td class=\''+getClassMarks(ele.english)+'\'>'+ele.english+'</td>';
+	str+='</tr>';
+	return str;
+	});
+	let header = '<tr>';
+	header += '<th>Name</th>';
+	header += '<th>Maths</th>';
+	header += '<th>Science</th>';
+	header += '<th>English</th>';
+	header += '</tr>';
+	let html = '<table>'+header+arr1.join('')+'</table>';
+	console.log(html);
+	let element = document.getElementById('Students');
+	element.innerHTML = html;
+}
+function getClassMarks(marks){
+	if (marks>=75) 
+		return 'td1 score75';
+	else if(marks<=50)
+		return 'id1 score50';
+	else
+		return 'td1';
+}
+function highMarks(){
+	highlightMarks = true;
+	showStudents();
+}
+
+	</script>
+</body>
+</html>

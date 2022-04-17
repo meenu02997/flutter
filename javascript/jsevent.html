@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body>
+	<h4 id="title1">
+		cheking Events
+	</h4>
+	Text 1:<input type="text" id="inputfield"
+	onchange="change(this)"
+	onkeydown="keydown(this)"
+	onkeypress="keypress(this)"
+	onkeyup="keyup(this)" 
+	onmouseout="mouseout(this)" 
+	onmouseover="mouseover(this)"
+	><br/>
+	<button id="btn1">
+		Button</button><br/>
+	<select id="dd1">
+		<option>Apple</option>
+		<option>Aeroplane</option>
+		<option>Banana</option>
+		<option>Bat</option>
+		<option>Ball</option>
+		<option>Cat</option>
+	</select>
+	<script type="text/javascript">
+		function clicked(elem) {
+			console.log("onclick", elem.id, event);
+		}
+		function change(elem) {
+			console.log("onchange", elem.id, event);
+		}
+		function onclick(elem){
+			console.log("onclick", elem.id, event);
+		}
+		function mouseover(elem){
+			console.log("onmouseover", elem.id, event);
+		}
+		function mouseout(elem){
+			console.log("onmouseout", elem.id, event);
+		}
+		function mousemove(elem){
+			console.log("onmousemove", elem.id, event);
+		}
+		function keydown(elem){
+			console.log("onkeydown", elem.id, event);
+		}
+		function onkeyup(elem){
+			console.log("onkeyup", elem.id, event);
+		}
+		function onkeypress(elem){
+			console.log("keypress", elem.id, event);
+		}
+	</script>
+</body>
+</html>

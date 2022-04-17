@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="divDD"></div>
+	<button onclick="makeDD()">Make DD</button>
+	<script>
+		let empData =[  
+    {name:"Shyam", email:"shyamjaiswal@gmail.com"},  
+    {name:"Bob", email:"bob32@gmail.com"},  
+    {name:"Jai", email:"jai87@gmail.com"}  
+];
+function makeDD(){
+	let div = document.getElementById('divDD');
+	let html = makeDDOptions(empData);
+	div.innerHTML= html;
+}
+function makeDDOptions(arr){
+	const optArr =arr.map(function(opt){
+		return '<option>'+opt.name+'</option>';
+	});
+	let str = '<select>'+optArr.join('')+'</select>';
+	console.log(str);
+	return str;
+}
+	</script>
+</body>
+</html>
+
+
+<!-- {"employees":[  
+    {"name":"Shyam", "email":"shyamjaiswal@gmail.com"},  
+    {"name":"Bob", "email":"bob32@gmail.com"},  
+    {"name":"Jai", "email":"jai87@gmail.com"}  
+]}   -->
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<select id="dd01">
+	<option>Select</option>
+	<option value="1">javascript</option>
+	<option value="2">java</option>
+	<option value="3">script</option>
+	<option value="4">ruby</option>
+</select>
+<select id="dd02">
+	<option>Select</option>
+	<option value="1">javascript</option>
+	<option value="2">java</option>
+	<option value="3">script</option>
+	<option value="4">ruby</option>
+</select>
+<button onclick="display()">Display</button>
+<script >
+	function display(){
+		let dd1 = document.getElementById('dd01');
+		console.log(dd1.value);
+		let dd2 = document.getElementById('dd02');
+		console.log(dd2.value);
+	}
+</script>
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="txt1" placeholder="enter Text" maxlength="6">
+<button onclick="display()">Display</button>
+<script >
+	function display(){
+		let txtfield = document.getElementById('txt1');
+		console.log(txtfield.value);
+		txtfield.value ='';
+		txtfield.placeholder='Get Name';
+		txtfield.maxlengt=10;
+		txtfield.readOnly=true;
+	}
+</script>
+</body>
+</html> -->

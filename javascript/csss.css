@@ -1,0 +1,10 @@
+.container{
+	border :5px solid #ffcc5c;
+	display: flex;
+	flex-direction: column;
+
+}
+.div{
+	background-color: green;
+
+}

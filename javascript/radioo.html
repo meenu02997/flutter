@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+	<div id="newradios"></div>
+	<script type="text/javascript">
+		const radioOptions = [
+		{value:"Slot1", txt:"8AM-11AM"},
+		{value:"Slot2", txt:"11AM-2PM"},
+		{value:"Slot3", txt:"5AM-12PM"},
+		{value:"Slot4", txt:"8AM-11AM"},
+		];
+		let html = makeRadios("delradio",radioOptions,'');
+		document.getElementById("newradios").innerHTML=html;
+		function makeRadios(name,arr,selectedValue) {
+			const arr1 = arr.map(function(item){
+				let checkedStr='';
+			if(item.value==selectedValue)
+				checkedStr='checked';
+			let s1 = '<input type="radio" name="'+name+'" value="'+item.value+'" '+checkedStr+'>'+item.txt;
+			return s1;
+		});
+		return arr1.join('');
+		}
+
+	</script>
+
+</body>
+</html>

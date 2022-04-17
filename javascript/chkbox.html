@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+what ddo you know<br/>
+<input type="checkbox" id="cb1">javascript<br>
+<input type="checkbox" id="cb2">React<br>
+<input type="checkbox" id="cb3">java<br>
+<button onclick="showChecked()"> show checked value</button>
+<button onclick="checkall(true)"> show checkall</button>
+<button onclick="checkall(false)"> show uncheckall</button>
+<button onclick="disableall(true)"> disable all</button>
+<button onclick="enableall(false)"> enable all</button>
+<script type="text/javascript">
+	function showChecked() {
+		let cb1 = document.getElementById('cb1');
+	let cb2 = document.getElementById('cb2');
+	let cb3 = document.getElementById('cb3');
+	console.log('cb1',cb1.checked);
+	console.log('cb2',cb2.checked);
+	console.log('cb3',cb3.checked);
+	}
+
+	function checkall(bool){
+		document.getElementById('cb1').checked=bool;
+	    document.getElementById('cb2').checked=bool;
+	    document.getElementById('cb3').checked=bool;
+	}
+	function disableall(bool){
+		document.getElementById('cb1').disabled=bool;
+	    document.getElementById('cb2').disabled=bool;
+	    document.getElementById('cb3').disabled=bool;
+	}
+</script>
+</body>
+</html>

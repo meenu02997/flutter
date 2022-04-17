@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+	wht do you know best<br/>
+	<input type="radio" name="tech" value="Javascript" id="r1">JavaScript<br>
+	<input type="radio" name="tech" value="Java" id="r1">Java<br>
+	<input type="radio" name="tech" value="script" id="r1">Script<br>
+	<button onclick="showChecked()">Show Checked Values</button><br/>
+	<button onclick="check('tech','Javascript1')">Check</button><br/>
+	<button onclick="disableAll(true)">Disable All</button><br/>
+	<button onclick="enableAll(true)">Enable All</button><br/>
+	<script type="text/javascript">
+		function check(name,value){
+			let names = document.getElementsByName(name);
+			console.log(names);
+			for(let i=0;i<names.length;i++){
+				if(names[i].value==value)
+					names[i].Checked = true;
+				else
+					names[i].Checked= false;
+			}
+			console.log(value);
+		}
+		function showChecked(){
+			let value ='';
+			let name = document.getElementsByName("tech");
+			console.log(name);
+			for(let i=0; i<name.length; i++){
+				if(name[i].Checked)
+					value = name[i].value;
+			}
+			console.log(value);
+		}
+	</script>
+</body>
+</html>

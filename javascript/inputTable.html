@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2 id="titleline">Students</h2>
+	<div id="students"></div>
+	<button onclick="showStudents()">Show Students</button>
+	<button onclick="getNewStudents()">New Student</button>
+	<script type="text/javascript">
+
+		let students =[
+		{name:'Bob',maths:82,computers:88,code:'c++'},
+		{name:'mona',maths:82,computers:88,code:'cjava'
+		{name:'sivv',maths:82,computers:88,code:'ruby'},
+		{name:'bnaml',maths:82,computers:88,code:'c#'},
+		{name:'ziba',maths:82,computers:88,code:'dart'},
+		];
+	const codeOtions = ['C++','Java','javascript','python'];
+	function getNewStudents(argument) {
+			let str = 'Name:<input type="text" id="name"><br/>';
+			str += 'Maths:<input type="text" id="maths"><br/>';
+			str += 'Computers:<input type="text" id="computers"><br/>';
+			str += makeCodeDD('code',codeOtions,'select Code','');
+			str+= '<button onclick= \'addStudent()\'>Add Student</button>';
+			let div = documents.getElementById('students');
+			div.innerHTML= str;
+		}
+	function addStudent(){
+			let st={};
+			st.name = document.getElementById('name').value;
+			st.maths = document.getElementById('maths').value;
+			st.computers= document.getElementById('maths').value;
+			st.computers= documents.getElementById('computers').value;
+			students.push(st);
+			showStudents();
+		}
+
+	function makeCodeDD(arr,first,selVal){
+			arr.map(function(opt){
+				if(opt==selVal)
+					return '<option selected>'+opt+'</option>';
+				else
+					return '<option>'+opt+'</option>';
+			});
+			let header = '<option disabled selected>'+first+'</option>';
+			if(selVa=='')
+				header = '<option disabled selected>'+first+'</option>';
+			let s1='<select id='\'+id+"\">'+header+arr1.join('')+'</select>';
+			return s1;
+		}
+    function showStudents() {
+	const arr1 = students.map(function(ele){
+	let str ='<tr>';
+	str+='<td class=\'td1\'>'+ele.name+'</td>';
+	str+='<td class=\'td1\'>'+ele.maths+'</td>';
+	str+='<td class=\'td1\'>'+ele.computers+'</td>';
+	str+= '</tr>';
+	return str;
+	});
+	let header = '<tr>';
+	header += '<th class=\'th1\'>Name</th>';
+	header += '<th class=\'th1\'>Maths</th>';
+	header += '<th class=\'th1\'>computers</th>';
+	header += '</tr>';
+	let html = '<table class=\'table1\'>'+header+arr1.join('')+'</table>';
+	console.log(html);
+	let element = document.getElementById('students');
+	element.innerHTML = html;
+}
+   function getClassMarks(marks){
+	if (marks>=75) 
+		return 'td1 score75';
+	else if(marks<=50)
+		return 'id1 score50';
+	else
+		return 'td1';
+}
+    function highMarks(){
+	highlightMarks = true;
+	showStudents();
+}
+	</script>
+
+</body>
+</html>

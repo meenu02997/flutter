@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+	<div class="container">
+		<form name="inputnumber"
+			autocomplete="off">
+			<b>Register No:</b>
+			<input type="text"
+				onkeypress="return onlyNumberKey(event)"
+				maxlength="11"
+				size="50%" />
+
+			<br>
+			<br>
+			<b>Ph. Number:</b>
+			<input type="tel"
+				size="50%"
+				onkeypress="return onlyNumberKey(event)" />
+
+			<br>
+			<br>
+			
+				<b>Age:</b>
+				<input type="number"
+					placeholder=" Only 12+ allowed"
+					min="12" />
+				<input type="submit"
+					value="Submit"
+					onclick="return detailssubmit()">
+			
+		</form>
+	</div>
+</body>
+<script>
+	function onlyNumberKey(evt) {
+		
+		// Only ASCII character in that range allowed
+		var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+		if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+			return false;
+		return true;
+	}
+</script>
+<script>
+	function detailssubmit() {
+		alert("Your details were Submitted");
+	}
+</script>
+
+</html>
